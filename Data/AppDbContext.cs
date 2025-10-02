@@ -11,4 +11,5 @@ public class AppDbContext : DbContext
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<TransactionCategory> TransactionCategories { get; set; }
     public DbSet<BankAccount> BankAccounts { get; set; }
+    public DbSet<Goal> Goals { get; set; }
 }
