@@ -2,15 +2,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinanceTracker.Models;
 
-public class BankAccount
+public class TransactionCategory
 {
     public Guid Id { get; set; }
     
     [Required, MaxLength(50)]
     public string Name { get; set; } = string.Empty;
-    
-    [Required]
-    public BankAccountType Type { get; set; }
     
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     
@@ -18,11 +15,4 @@ public class BankAccount
     public User? User { get; set; }
     
     public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
-}
-
-public enum BankAccountType
-{
-    Checking,
-    Savings,
-    Debt
 }
